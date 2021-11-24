@@ -21,14 +21,14 @@ namespace API.Controllers
         {
             _context.Categorias.AddRange(new Categoria[]
                 {
-                    new Categoria { CategoriaId = 1, Nome = "Categoria 1" },
+                    new Categoria { CategoriaId = 1, Nome = "Eletrodomésticos" },
                 }
             );
             _context.Produtos.AddRange(new Produto[]
                 {
-                    new Produto { ProdutoId = 1, Nome = "Produto 1", Preco = 1, Quantidade = 1, CategoriaId = 1 },
-                    new Produto { ProdutoId = 2, Nome = "Produto 2", Preco = 2, Quantidade = 2, CategoriaId = 1 },
-                    new Produto { ProdutoId = 3, Nome = "Produto 3", Preco = 3, Quantidade = 3, CategoriaId = 1 },
+                    new Produto { ProdutoId = 1, Nome = "Geladeira Frost-free Electrolux 454L Inverse Cor Inox (DB53X)", Preco = 5629, Quantidade = 1, CategoriaId = 1 },
+                    new Produto { ProdutoId = 2, Nome = "Fogão Consul 5 Bocas Cor Inox Com Mesa de Vidro e Trempe de Ferro Fundido - CFS5VAR", Preco = 1879, Quantidade = 2, CategoriaId = 1 },
+                    new Produto { ProdutoId = 3, Nome = "Microondas Philco 32L Com Porta Espelhada Branco PMO33EB 127V", Preco = 930, Quantidade = 3, CategoriaId = 1 },
                 }
             );
             _context.SaveChanges();
