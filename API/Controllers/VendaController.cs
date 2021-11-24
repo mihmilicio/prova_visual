@@ -2,6 +2,7 @@ using System.Linq;
 using API.Data;
 using API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -27,12 +28,13 @@ namespace API.Controllers
         }
 
         //GET: api/venda/list
-        //ALTERAR O MÉTODO PARA MOSTRAR TODOS OS DADOS DA VENDA E OS DADOS RELACIONADOS
         [HttpGet]
         [Route("list")]
-        public IActionResult List()
-        {
-            return Ok(_context.Vendas.ToList());
-        }
+        public IActionResult List() =>
+            Ok(_context.Vendas
+                .Include(v => v.FormaPagamento)
+                .Include(v => v.Itens)
+                    .ThenInclude(i => i.Produto.Categoria)
+                .ToList());
     }
 }
