@@ -3,8 +3,8 @@ POST https://localhost:5001/api/forma-pagamento/create
 Content-Type: application/json
 
 {
-    "Nome" : "Cartão de Crédito",
-    "Ordem": 1
+    "Nome" : "Boleto Bancário",
+    "Ordem": 3
 }
 
 ### Listar todas as formas de pagamento
