@@ -1,0 +1,11 @@
+### Cadastrar uma nova forma de pagamento
+POST https://localhost:5001/api/forma-pagamento/create
+Content-Type: application/json
+
+{
+    "Nome" : "Boleto Bancário",
+    "Ordem": 3
+}
+
+### Listar todas as formas de pagamento
+GET https://localhost:5001/api/forma-pagamento/list
