@@ -1,2 +1,18 @@
+### Cadastrar uma nova venda
+POST https://localhost:5001/api/venda/create
+Content-Type: application/json
+
+{
+    "VendaId" : 2,
+    "Cliente" : "João de Souza",
+    "Itens" : [{
+        "ProdutoId" : 2,
+        "Quantidade" : 1,
+        "Preco" : 3.5,
+        "CarrinhoId" : "f34e722e-bb9a-446a-998b-fa080df9ac1d"
+    }],
+    "FormaPagamentoId" : 1
+}
+
 ### Listar vendas
-POST https://localhost:5001/api/venda/list
+GET https://localhost:5001/api/venda/list
