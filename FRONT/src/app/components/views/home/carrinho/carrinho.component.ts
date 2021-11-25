@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { ItemVenda } from "src/app/models/item-venda";
 import { ItemService } from "src/app/services/item.service";
 
@@ -11,7 +12,7 @@ export class CarrinhoComponent implements OnInit {
     itens: ItemVenda[] = [];
     colunasExibidas: String[] = ["nome", "preco", "quantidade", "imagem"];
     valorTotal!: number;
-    constructor(private itemService: ItemService) {}
+    constructor(private itemService: ItemService, private router: Router) {}
 
     ngOnInit(): void {
         let carrinhoId = localStorage.getItem("carrinhoId")! || "";
@@ -21,5 +22,9 @@ export class CarrinhoComponent implements OnInit {
                 return total + item.preco * item.quantidade;
             }, 0);
         });
+    }
+
+    finalizar(): void {
+        this.router.navigate(["home/finalizar"]);
     }
 }
